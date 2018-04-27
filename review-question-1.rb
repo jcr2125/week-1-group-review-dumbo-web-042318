@@ -1,5 +1,7 @@
 ## QUESTION 1
 
+require "pry"
+
 pokemon = [
   {
     "id": 1,
@@ -59,6 +61,19 @@ pokemon = [
   ]
 }
 ]
+
+
+pokemon.find { |a_pokemon| a_pokemon[:name] == "bulbasaur" }[:abilities][0][:ability][:url]
+
+pokemon1 = pokemon.find_all do |pokemon_hash|
+  pokemon_hash[:base_experience] > 40
+end
+
+pokemon.collect { |a_pokemon| a_pokemon[:name] }
+
+print pokemon.any? { |a_pokemon| a_pokemon[:weight] > 60 }
+
+
 
 
 # How would you get the url for Bulbasaur's ability?
